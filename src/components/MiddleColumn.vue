@@ -6,46 +6,43 @@
     </div>
     <div class="content">
       <div class="section">
-        <h3>Skills</h3>
+        <h3>参数</h3>
         <div class="item">
-          <span class="arrow">></span> Plugins
-          <span class="add-button">+</span>
+          <span class="arrow">></span> CVE
+        </div>
+        <textarea class="uniform-textarea" placeholder="用逗号分隔..."></textarea>
+        <div class="item">
+          <span class="arrow">></span> UUID
+        </div>
+        <textarea class="uniform-textarea" placeholder="用逗号分隔..."></textarea>
+        <div class="item">
+          <span class="arrow">></span> HOST
+        </div>
+        <textarea class="uniform-textarea" placeholder="用逗号分隔..."></textarea>
+        <div class="item">
+          <span class="arrow">></span> 时间范围
+        </div>
+        <div class="time-range-picker">
+          <textarea class="uniform-textarea" placeholder="开始时间：YYYY-MM-DD"></textarea>
+          <span>~</span>
+          <textarea class="uniform-textarea" placeholder="结束时间：YYYY-MM-DD"></textarea>
         </div>
       </div>
       <div class="section">
-        <h3>Memory</h3>
+        <h3>工具</h3>
         <div class="item">
-          <span class="arrow">></span> Variables
-          <span class="add-button">+</span>
-        </div>
-        <div class="item">
-          <span class="arrow">></span> Database
-          <span class="add-button">+</span>
-        </div>
-        <div class="item">
-          <span class="arrow">></span> Long-term memory
+          <span class="arrow">></span> 自动导出报告
           <span class="toggle-switch">On</span>
         </div>
         <div class="item">
-          <span class="arrow">></span> Filebox
+          <span class="arrow">></span> 联网搜索
           <span class="toggle-switch">On</span>
         </div>
       </div>
       <div class="section">
-        <h3>Chat experience</h3>
+        <h3>文件导入</h3>
         <div class="item">
-          <span class="arrow">></span> Opening questions
-        </div>
-        <div class="item">
-          <span class="arrow">></span> Auto-suggestion
-          <span class="toggle-switch">On</span>
-        </div>
-        <div class="item">
-          <span class="arrow">></span> Shortcuts
-          <span class="add-button">+</span>
-        </div>
-        <div class="item">
-          <span class="arrow">></span> Voices
+          <span class="arrow">></span> 导入CSV文件
           <span class="add-button">+</span>
         </div>
       </div>
@@ -59,6 +56,7 @@ import { ref } from 'vue';
 const props = defineProps({
   isMiddleCollapsed: Boolean
 });
+
 </script>
 
 <style scoped>
@@ -155,5 +153,35 @@ const props = defineProps({
   font-size: 13px;
   color: #202124;
   border: 1px solid #dadce0;
+}
+
+.uniform-textarea {
+  width: 100%;
+  height: 32px; /* Fixed height */
+  padding: 6px 8px;
+  font-family: inherit;
+  font-size: 12px;
+  border: 1px solid #dadce0; /* Consistent gray border */
+  border-radius: 8px;
+  resize: none;
+  box-sizing: border-box;
+  margin-top: 2px;
+  margin-bottom: 6px;
+}
+
+.uniform-textarea:focus {
+  outline: none;
+}
+
+.time-range-picker {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0 8px;
+  margin-bottom: 6px;
+}
+
+.time-range-picker span {
+  color: #5f6368;
 }
 </style>
